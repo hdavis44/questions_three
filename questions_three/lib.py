@@ -1,14 +1,22 @@
 # try_me test function
 from random import randint
 
-def try_me():
+def try_me(**kwargs):
+    if 'name' in kwargs and 'quest' in kwargs and 'answer' in kwargs:
+        questions_three = {"Name": kwargs['name'],
+                           "Quest": kwargs['quest'],
+                           "Answer": kwargs['answer']}
+        return questions_three
+
     print("What is your name?")
     name = input()
+
     print("What is your quest?")
     quest = input()
+
     question3_list = ["What is your favorite color?",
-                      "What is the capital of Assyria?",
-                      "What is the average airspeed velocity of an unladen swallow?"]
+                    "What is the capital of Assyria?",
+                    "What is the average airspeed velocity of an unladen swallow?"]
     q = randint(0, len(question3_list)-1)
     print(question3_list[q])
     answer = input()
